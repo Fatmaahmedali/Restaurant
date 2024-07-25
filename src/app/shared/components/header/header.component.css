@@ -1,0 +1,60 @@
+.navbar-dark {
+  background-color: transparent; /* Initial transparent background */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+.navbar-dark.scrolled {
+  background-color: black; /* Background color when scrolled */
+}
+.banner {
+  background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)),url('https://themewagon.github.io/restoran/img/bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo{
+  width:400px;
+  margin-left: 150px;
+}
+h4,p{
+  color: aliceblue;
+}
+/*  */
+.fa-solid{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+h1 , i  , label {
+  color: #FEA116 !important
+}
+@keyframes imgRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 768px) {
+  .photo {
+    display: none;
+  }
+}
+.text-overlay h1 {
+  font-size: 48px;
+}
+
+.text-overlay h4 {
+  font-size: 18px;
+}
+
+.image {
+  text-align: center; /* Center image horizontally */
+}
+
+.image img {
+  max-width: 100%; /* Ensure image is responsive */
+}

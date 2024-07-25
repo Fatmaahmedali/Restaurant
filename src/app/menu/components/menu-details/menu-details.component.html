@@ -1,0 +1,26 @@
+<div class="box">
+  <h1 class="text-center" style="margin-bottom: 25px;">More Details</h1>
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-5 col-sm-12">
+      <img [src]="data.image" alt="">
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <ul class="list-unstyled">
+          <li><strong>Title:<span> {{ data.title }}</span></strong></li>
+          <li><strong>Category:<span> {{ data.category }}</span></strong></li>
+          <li><strong>Description: <span>{{ data.description }}</span></strong></li>
+          <li><strong>Rate: <span>{{ data.rate }}</span></strong></li>
+          <li><strong>Count: <span>{{ data.count }}</span></strong></li>
+          <li><strong>Price: <span>{{ data.price }}</span></strong></li>
+          <button class="btn-outline" routerLink="/menu">More Details of Menu</button>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="text-center">
+    <app-spinner></app-spinner>
+  </div>
+</div>
+
+

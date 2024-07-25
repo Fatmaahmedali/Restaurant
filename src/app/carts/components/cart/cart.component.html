@@ -1,0 +1,52 @@
+<a class="navbar-brand" href="/menu">
+  <h2 class="text-size"> < Continue shopping</h2>
+</a>
+<div class="container">
+  <div *ngIf="CartProduct.length > 0; else emptyCart">
+    <h1 class="text-center" style="margin-top: 40px;">
+      Your Cart ({{ CartProduct.length }} items)
+    </h1>
+    <div class="clear">
+      <button class=" d-flex" style="color: #FEA116 !important; border: #FEA116;" (click)="clearCart()">Clear Shopping Cart</button>
+    </div>
+    <div class="cart-item" *ngFor="let item of CartProduct; let i = index">
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <img [src]="item.item.image" class="img-fluid" alt="Product Image">
+        </div>
+        <div class="col-md-4">
+          <div class="item-details">
+            <h4>{{ item.item.title }}</h4>
+            <p>${{ item.item.price }}</p>
+          </div>
+          <div class="quantity-input d-flex justify-content-center align-items-center">
+            <button class="quantity-btn btn-border" style="margin-right:10px;" (click)="Mins(i)">-</button>
+            <div class="circle-input-container">
+              <input type="number" min="1" [value]="item.quantity" (change)="detecrchange()" [(ngModel)]="item.quantity" class="form-control form-control-sm">
+            </div>
+            <button class="quantity-btn btn-border" style="margin-left:10px;" (click)="Addamount(i)">+</button>
+          </div>
+        </div>
+        <div class="col-md-2 items">
+          <div class="item-actions">
+            <button class="delete-btn" (click)="removeItem(i)"><i class="fa-solid fa-x"></i></button>
+            <p>${{ item.item.price * item.quantity }}</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="text-right mt-4">
+      <h6>Total Cart Value: ${{ total }}</h6>
+      <button class="order-btn" (click)="addCart()">Order Now</button>
+    </div>
+  </div>
+  <div *ngIf="success" class="alert alert-success mt-3">
+    <strong>Well done!</strong> Your order has been placed successfully.
+  </div>
+  <ng-template #emptyCart>
+    <h1 class="text-center"> Your Cart Is Empty</h1>
+    <img src="https://sankaraanaturals.in/theme/grocery/img/empty-cart.png" alt="">
+  </ng-template>
+</div>

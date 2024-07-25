@@ -1,0 +1,17 @@
+<app-header [data]="categories" [title]="'Selected'" (selectedCategory)="filter($event)"></app-header>
+<div class="container" >
+  <h1 style="text-align:center; margin-top: 25px;">MENUS</h1>
+  <div class="row row-cols-1 row-cols-md-4 py-4" *ngIf="!loading" >
+    <div *ngFor="let product of products" >
+      <app-menus [value]="product" (item)="AddToCart($event)"></app-menus>
+    </div>
+  </div>
+
+  <div class="text-center w-100%" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+</div>
+<app-select></app-select>
+
+
+

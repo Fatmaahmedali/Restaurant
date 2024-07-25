@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #f9f6f2}
+.card{
+  border-radius: 30px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+.col{
+  margin-right: 25px;
+}
+.h-50{
+  height: 30% !important;
+
+}
+.product-card {
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.custom-button {
+  color: white;
+  background-color: brown;
+  border: 1px solid brown;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.custom-button:hover {
+  background-color: white;
+  color: brown;
+  border-color: brown;
+}
